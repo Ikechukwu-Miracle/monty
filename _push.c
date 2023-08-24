@@ -51,3 +51,15 @@ stack_t *push_stack(stack_t **head, int n)
 	return newNode;
 }
 
+/**
+ * _pint - prints the data at the top stack
+ * @stack: double pointer to the data
+ * @line_num: line number in file
+ * Return: void
+ */
+void _pint(stack_t **stack, unsigned int line_num)
+{
+	if (*stack == NULL)
+		fprintf(stderr, "L%d: can't pint, stack empty", line_num);
+	printf("%d\n", (*stack)->n);
+}
