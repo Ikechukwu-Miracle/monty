@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * pre_exec - calls the function correspondinbg to the opcode
+ * @stack: pointer to the stack list
+ * @line_num: holds number of particular line read
+ *
+ * Return: void
+ */
 void pre_exec(char *line, stack_t **stack, int line_num)
 {
 	op_func s;
