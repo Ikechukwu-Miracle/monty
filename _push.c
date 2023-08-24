@@ -68,3 +68,28 @@ void _pint(stack_t **stack, unsigned int line_num)
 	}
 	printf("%d\n", (*stack)->n);
 }
+
+/**
+ * _pop - removes the data at the top stack
+ * @stack: double pointer to the data
+ * @line_num: line number in file
+ * Return: void
+ */
+void _pop(stack_t **stack, unsigned int line_num)
+{
+	stack_t *temp;
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop, stack empty", line_num);
+		stack_free(*stack);
+		exit(EXIT_FAILURE);
+	}
+	temp = *stack;
+	*stack = (*stack)->next;
+	if (*stack != NULL)
+	{
+		(*stack)->prev = NULL;
+	}
+	free(temp);
+	temp = NULL;
+}

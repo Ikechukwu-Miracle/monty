@@ -44,6 +44,7 @@ typedef struct instruction_s
 
 typedef void (*op_func)(stack_t **stack, unsigned int line_number);
 
+void _pop(stack_t **stack, unsigned int line_num);
 void _pint(stack_t **stack, unsigned int line_num);
 void pre_exec(char *line, stack_t **stack, int line_num);
 op_func get_opcode(char *str);
