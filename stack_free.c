@@ -6,15 +6,27 @@
  *
  * Return: void
  */
+/*void stack_free(stack_t *head)
+*{
+*	if (head == NULL)
+*		return;
+
+*	while (head->next)
+*	{
+*		head = head->next;
+*		free(head->prev);
+*	}
+*	free(head);
+}*/
 void stack_free(stack_t *head)
 {
-	if (head == NULL)
-		return;
+        stack_t *temp;
 
-	while (head->next)
-	{
-		head = head->next;
-		free(head->prev);
-	}
-	free(head);
+        while (head != NULL)
+        {
+                temp = head;
+                head = head->next;
+                free(temp);
+        }
 }
+
