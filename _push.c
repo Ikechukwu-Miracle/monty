@@ -60,6 +60,11 @@ stack_t *push_stack(stack_t **head, int n)
 void _pint(stack_t **stack, unsigned int line_num)
 {
 	if (*stack == NULL)
+	{
 		fprintf(stderr, "L%d: can't pint, stack empty", line_num);
+		stack_free(*stack);
+		exit(EXIT_FAILURE);
+
+	}
 	printf("%d\n", (*stack)->n);
 }
