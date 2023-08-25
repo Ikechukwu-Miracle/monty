@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int line_num = 1;
 	size_t n = 0;
 	FILE *file;
-	stack_t *sk;
+	stack_t *sk = NULL;
 
 	if (argc != 2)
 	{
@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 	if (file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		stack_free(sk);
 		exit(EXIT_FAILURE);
 	}
 
-	sk = NULL;
 	while (getline(&buff, &n, file) != -1)
 	{
 		op_code = strtok(buff, " \t\n");
