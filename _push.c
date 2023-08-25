@@ -93,3 +93,22 @@ void _pop(stack_t **stack, unsigned int line_num)
 	free(temp);
 	temp = NULL;
 }
+
+void _div(stack_t **stack, unsigned int line_num)
+{
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_num);
+		stack_free(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_num);
+		stack_free(*stack);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n /= (*stack)->n;
+	_pop(stack, line_num);
+}

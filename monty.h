@@ -55,8 +55,9 @@ void _push(stack_t **head, unsigned int line_num);
 void _pall(stack_t **head, unsigned int line_num);
 void _swap(stack_t **head, unsigned int line_num);
 void _add(stack_t **head, unsigned int line_num);
-void _nop(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_num);
+void _nop(stack_t **stack, unsigned int line_num);
 void _sub(stack_t **stack, unsigned int line_num);
+void _div(stack_t **stack, unsigned int line_num);
+void _mul(stack_t **stack, unsigned int line_num);
 
 #endif

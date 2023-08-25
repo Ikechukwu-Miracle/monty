@@ -8,7 +8,7 @@
 
 op_func get_opcode(char *str)
 {
-	int x;
+	int x = 0;
 
 	instruction_t op_code[] = {
 		{"push", _push},
@@ -19,10 +19,10 @@ op_func get_opcode(char *str)
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL},
 	};
-
-	x = 0;
 	while (op_code[x].f != NULL && strcmp(op_code[x].opcode, str) != 0)
 		x++;
 
