@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * _mul - multiplies top data and second top data in stack
+ * @stack: data to check
+ * @line_num: line number
+ *
+ * Return: void
+ */
 void _mul(stack_t **stack, unsigned int line_num)
 {
 	if (*stack == NULL || (*stack)->next == NULL)

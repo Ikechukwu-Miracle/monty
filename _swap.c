@@ -23,6 +23,13 @@ void _swap(stack_t **stack, unsigned int line_num)
 	temp->next->n = tmp_val;
 }
 
+/**
+ * _add - adds top data to second top data in stack
+ * @stack: pointer to the stack list
+ * @line_num: line number
+ *
+ * Return: void
+ */
 void _add(stack_t **stack, unsigned int line_num)
 {
 	int i, j, sum = 0;
