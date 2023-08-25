@@ -22,3 +22,22 @@ void _swap(stack_t **stack, unsigned int line_num)
 	temp->n = temp->next->n;
 	temp->next->n = tmp_val;
 }
+
+void _add(stack_t **stack, unsigned int line_num)
+{
+	int i, j, sum = 0;
+	stack_t *temp = *stack;
+
+	if (temp == NULL || temp->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
+		stack_free(*stack);
+		exit(EXIT_FAILURE);
+	}
+	i = temp->n;
+	j = temp->next->n;
+
+	sum = (i + j);
+	(*stack)->next->n = sum;
+	_pop(stack, line_num);
+}

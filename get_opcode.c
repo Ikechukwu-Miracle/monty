@@ -16,6 +16,7 @@ op_func get_opcode(char *str)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
+		{"add", _add},
 		{NULL, NULL},
 	};
 
