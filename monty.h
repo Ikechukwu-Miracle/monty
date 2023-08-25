@@ -53,5 +53,6 @@ stack_t *push_stack(stack_t **head, int n);
 int is_num(char *str);
 void _push(stack_t **head, unsigned int line_num);
 void _pall(stack_t **head, unsigned int line_num);
+void _swap(stack_t **head, unsigned int line_num);
 
 #endif
