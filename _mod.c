@@ -1,3 +1,5 @@
+#include "monty.h"
+#include <stdio.h>
 /**
  * _mod - gives the remainder of the second top data by the top data
  * @stack: double pointer to the data
@@ -9,7 +11,7 @@ void _mod(stack_t **stack, unsigned int line_num)
 {
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_num);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_num);
 		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
