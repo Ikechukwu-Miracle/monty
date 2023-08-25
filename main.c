@@ -1,6 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 
+int flag_sq = 0;
 
 /**
  * main - entry point of monty code interpreter

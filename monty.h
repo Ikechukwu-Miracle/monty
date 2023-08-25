@@ -11,7 +11,6 @@
 
 
 extern int flag_sq;
-int flag_sq = 0;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
