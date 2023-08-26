@@ -62,11 +62,8 @@ void _pstr(stack_t **stack, __attribute__((unused))unsigned int line_num)
 	stack_t *temp = *stack;
 	int tmpVal;
 
-	if (temp == NULL)
-	{
-		printf("\n");
-		exit(EXIT_SUCCESS);
-	}
+	if (*stack == NULL)
+		putchar('\n');
 
 	while (temp != NULL)
 	{
