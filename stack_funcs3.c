@@ -19,3 +19,33 @@ void _mul(stack_t **stack, unsigned int line_num)
 	(*stack)->next->n *= (*stack)->n;
 	_pop(stack, line_num);
 }
+
+/**
+ * _pchar - prints character corresponding to integer of top element
+ * in the stack.
+ * @stack: pointer to stack list
+ * @line_num: line number
+ *
+ * Return: nothing
+ */
+void _pchar(stack_t **stack, unsigned int line_num)
+{
+	int charVal = 0;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
+		stack_free(*stack);
+		exit(EXIT_FAILURE);
+	}
+	if (((*stack)->n < 27) || ((*stack)->n >= 127))
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
+		stack_free(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	charVal = (*stack)->n;
+	putchar(charVal);
+	putchar('\n');
+}
