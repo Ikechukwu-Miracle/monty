@@ -64,14 +64,16 @@ void _pstr(stack_t **stack, __attribute__((unused))unsigned int line_num)
 
 	if (*stack == NULL)
 		putchar('\n');
-
-	while (temp != NULL)
+	else
 	{
-		tmpVal = temp->n;
-		if (tmpVal == 0 || !isprint(tmpVal))
-			break;
-		putchar(tmpVal);
-		temp = temp->next;
+		while (temp != NULL)
+		{
+			tmpVal = temp->n;
+			if (tmpVal == 0 || !isprint(tmpVal))
+				break;
+			putchar(tmpVal);
+			temp = temp->next;
+		}
+		putchar('\n');
 	}
-	putchar('\n');
 }
