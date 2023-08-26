@@ -20,5 +20,4 @@ void pre_exec(char *line, stack_t **stack, int line_num)
 		exit(EXIT_FAILURE);
 	}
 	s(stack, line_num);
-	line_num++;
 }

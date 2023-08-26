@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
 			continue;
 		}
 		pre_exec(op_code, &sk, line_num);
+		line_num++;
 	}
 
 	fclose(file);
