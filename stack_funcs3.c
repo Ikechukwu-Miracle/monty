@@ -77,3 +77,26 @@ void _pstr(stack_t **stack, __attribute__((unused))unsigned int line_num)
 		putchar('\n');
 	}
 }
+
+/**
+ * _rotl - rotates the stack to the right
+ * @stack: pointer to the stack list
+ * @line_num: line number
+ * Return: nothing
+ */
+void _rotl(stack_t **stack, __attribute__((unused))unsigned int line_num)
+{
+	stack_t *temp, *runner;
+
+	temp = runner = *stack;
+
+	if (*stack == NULL)
+		return;
+
+	*stack = (*stack)->next;
+	while (runner->next != NULL)
+		runner = runner->next;
+	runner->next = temp;
+	temp->prev = runner;
+	temp->next = NULL;
+}
