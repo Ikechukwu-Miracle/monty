@@ -49,3 +49,32 @@ void _pchar(stack_t **stack, unsigned int line_num)
 	putchar(charVal);
 	putchar('\n');
 }
+
+/**
+ * _pstr - prints all character corresponding to integers of all the elements
+ * in the stack.
+ * @stack: pointer to the stack list
+ * @line_num: line number
+ * Return: nothing
+ */
+void _pstr(stack_t **stack, __attribute__((unused))unsigned int line_num)
+{
+	stack_t *temp = *stack;
+	int tmpVal;
+
+	if (temp == NULL)
+	{
+		printf("\n");
+		exit(EXIT_SUCCESS);
+	}
+
+	while (temp != NULL)
+	{
+		tmpVal = temp->n;
+		if (tmpVal == 0 || !isprint(tmpVal))
+			break;
+		putchar(tmpVal);
+		temp = temp->next;
+	}
+	putchar('\n');
+}
