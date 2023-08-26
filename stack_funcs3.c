@@ -90,7 +90,7 @@ void _rotl(stack_t **stack, __attribute__((unused))unsigned int line_num)
 
 	temp = runner = *stack;
 
-	if (*stack == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 
 	*stack = (*stack)->next;
