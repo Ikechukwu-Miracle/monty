@@ -1,8 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 
-flag_sq = 0;
-
+int flag_sq = 0;
 /**
  * main - entry point of monty code interpreter
  * @argc: argument count
@@ -17,6 +16,7 @@ int main(int argc, char *argv[])
 	size_t n = 0;
 	FILE *file;
 	stack_t *sk = NULL;
+
 
 	if (argc != 2)
 	{
