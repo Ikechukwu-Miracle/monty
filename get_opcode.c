@@ -25,6 +25,7 @@ op_func get_opcode(char *str)
 		{"pchar", _pchar},
 		{"pstr", _pstr},
 		{"rotl", _rotl},
+		{"rotr", _rotr},
 		{NULL, NULL},
 	};
 	while (op_code[x].f != NULL && strcmp(op_code[x].opcode, str) != 0)

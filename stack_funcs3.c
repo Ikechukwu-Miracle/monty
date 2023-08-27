@@ -100,3 +100,24 @@ void _rotl(stack_t **stack, __attribute__((unused))unsigned int line_num)
 	temp->prev = runner;
 	temp->next = NULL;
 }
+
+void _rotr(stack_t **stack, __attribute__((unused))unsigned int line_num)
+{
+	stack_t *temp;
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+ 		return;
+	}
+
+	temp = *stack;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+
+	temp->prev->next = NULL;
+	temp->next = *stack;
+	temp->prev = NULL;
+	(*stack)->prev = temp;
+	*stack = temp;
+}
