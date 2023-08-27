@@ -22,7 +22,10 @@ void _push(stack_t **stack, unsigned int line_num)
 		*stack = NULL;
 		exit(EXIT_FAILURE);
 	}
-	push_stack(stack, num_arg);
+	if (flag_sq == 0)
+		push_stack(stack, num_arg);
+	else
+		push_queue(stack, num_arg);
 }
 
 /**

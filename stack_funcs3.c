@@ -121,3 +121,36 @@ void _rotr(stack_t **stack, __attribute__((unused))unsigned int line_num)
 	(*stack)->prev = temp;
 	*stack = temp;
 }
+
+#include "monty.h"
+
+/**
+ * push_queue - adds a new node to the end of a doubly
+ * linked list
+ * @head: points to the pointer to the first node in the list
+ * @n: integer value of new node
+ * Return: pointer to new node or NULL
+ */
+stack_t *push_queue(stack_t **head, int n)
+{
+	stack_t *newNode, *temp = *head;
+
+	newNode = malloc(sizeof(stack_t));
+	if (newNode == NULL)
+		return (NULL);
+
+	newNode->n = n;
+	newNode->next = NULL;
+
+	if (temp != NULL)
+	{
+		while (temp->next != NULL)
+			temp = temp->next;
+		temp->next = newNode;
+	}
+	else
+		*head = newNode;
+	newNode->prev = temp;
+
+	return (newNode);
+}

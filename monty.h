@@ -63,6 +63,7 @@ void _pchar(stack_t **stack, unsigned int line_num);
 void _pstr(stack_t **stack, unsigned int line_num);
 void _rotl(stack_t **stack, unsigned int line_num);
 void _rotr(stack_t **stack, __attribute__((unused))unsigned int line_num);
-
-
+void _stack(stack_t **stack, unsigned int line_num);
+void _queue(stack_t **stack, unsigned int line_num);
+stack_t *push_queue(stack_t **head, int n);
 #endif
